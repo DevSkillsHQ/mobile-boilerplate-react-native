@@ -1,0 +1,36 @@
+name: Setup boilerplate
+
+on:
+  workflow_dispatch:
+    inputs:
+      boilerplate:
+        type: string
+        description: Name of boilerplate
+        required: true
+      branch-name:
+        type: string
+        description: Name of the branch to initialize boilerplate in
+        required: true
+        default: development
+
+jobs:
+  setup-boilerplate:
+    name: Setup boilerplate
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Run shell script
+        run: |
+          git clone git@github.com:DevSkillsHQ/${{ github.event.inputs.boilerplate }}.git
+          rm -rf ${{ github.event.inputs.boilerplate }}/.git
+          cp -r ${{ github.event.inputs.boilerplate }} app/
+          rm -rf ${{ github.event.inputs.boilerplate }}
+          git add app/
+          git commit -m 'Init boilerplate'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
