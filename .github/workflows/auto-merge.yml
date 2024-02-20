@@ -26,6 +26,9 @@ jobs:
 
     - name: Set up Android SDK
       uses: android-actions/setup-android@v2
+    
+    - name: install dependencies
+      run: npm install
 
     - name: Build Android Debug APK
       run: |
