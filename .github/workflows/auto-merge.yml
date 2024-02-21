@@ -28,7 +28,7 @@ jobs:
       - name: prebuild android
         run: |
           npm install
-          expo prebuild --platform android
+          npx expo prebuild --platform android
   
       - name: Install Dependencies
         run: |
