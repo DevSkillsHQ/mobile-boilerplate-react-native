@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Verifies the boilerplate can start and run in GitHub Actions environment
+  # Verifies the boilerplate can be build
   test-for-workflow:
     runs-on: ubuntu-latest
 
@@ -28,15 +28,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-      - name: prebuild android
+      
+      - name: prebuild Dependencies
         run: |
           npm install
           npx expo prebuild --platform android
-  
-      - name: Install Dependencies
-        run: |
           cd android && ./gradlew dependencies
-  
+
       - name: Build Debug APK
         run: |
           cd android && ./gradlew assembleDebug
