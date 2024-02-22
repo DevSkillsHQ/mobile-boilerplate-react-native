@@ -10,8 +10,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Verifies the boilerplate can be build
-  test-for-workflow:
+  # Verifies the boilerplate can be built
+  test-for-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,7 +41,7 @@ jobs:
 
   auto-merge-dependabot:
     needs:
-      - test-for-workflow
+      - test-for-build
     runs-on: ubuntu-20.04
     if: github.actor == 'dependabot[bot]'
     steps:
