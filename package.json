@@ -19,7 +19,7 @@
     "expo": "^47.0.13",
     "expo-asset": "^8.4.3",
     "expo-cli": "^6.1.0",
-    "expo-constants": "^14.0.2",
+    "expo-constants": "^15.4.5",
     "expo-font": "^11.0.1",
     "expo-linking": "^6.2.2",
     "expo-splash-screen": "^0.26.4",
