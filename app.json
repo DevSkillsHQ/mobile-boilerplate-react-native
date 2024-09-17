@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile-boilerplate-react-native-1",
-    "slug": "mobile-boilerplate-react-native-1",
+    "name": "mobile-boilerplate-react-native",
+    "slug": "mobile-boilerplate-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,17 +19,18 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.anonymous.mobileboilerplatereactnative1"
+      "bundleIdentifier": "io.alvalabs.mobileboilerplatereactnative"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.mobileboilerplatereactnative1"
+      "package": "io.alvalabs.mobileboilerplatereactnative"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
     }
   }
+
 }
