@@ -1,8 +1,7 @@
-import { ColorSchemeName, useColorScheme as _useColorScheme } from 'react-native';
+import { useColorScheme as _useColorScheme } from 'react-native';
 
-// The useColorScheme value is always either light or dark, but the built-in
-// type suggests that it can be null. This will not happen in practice, so this
-// makes it a bit easier to work with.
-export default function useColorScheme(): NonNullable<ColorSchemeName> {
-  return _useColorScheme() as NonNullable<ColorSchemeName>;
+// React Native reports 'light', 'dark' or 'unspecified' (null on older versions), but the
+// theme only defines light and dark colors, so anything that is not dark is treated as light.
+export default function useColorScheme(): 'light' | 'dark' {
+  return _useColorScheme() === 'dark' ? 'dark' : 'light';
 }
