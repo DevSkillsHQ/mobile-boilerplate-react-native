@@ -3,14 +3,16 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
+import type { NavigatorScreenParams } from '@react-navigation/native';
+
 export type RootStackParamList = {
-  Root: undefined;
+  Root: NavigatorScreenParams<BottomTabParamList> | undefined;
   NotFound: undefined;
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  TabOne: NavigatorScreenParams<TabOneParamList> | undefined;
+  TabTwo: NavigatorScreenParams<TabTwoParamList> | undefined;
 };
 
 export type TabOneParamList = {
